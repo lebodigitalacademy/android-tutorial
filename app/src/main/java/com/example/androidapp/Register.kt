@@ -1,15 +1,3 @@
-//package com.example.androidapp
-//
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//
-//class Register : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_register2)
-//    }
-//}
-
 package com.example.androidapp
 
 import androidx.appcompat.app.AppCompatActivity
@@ -18,9 +6,9 @@ import android.os.Bundle
 import android.content.Intent;
 import android.os.Parcel
 import android.os.Parcelable
-import android.view.View;
 import android.widget.Button
 import android.widget.EditText;
+import android.widget.TextView
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -29,18 +17,13 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import java.util.jar.Attributes.Name
 
 private lateinit var etUsername: EditText
 private lateinit var etPassword: EditText
-private lateinit var password: String
-private lateinit var userName: String
+//private lateinit var password: String
+//private lateinit var userName: String
 
 class Register() : AppCompatActivity(), Parcelable {
-
-//    lateinit var etUsername: EditText
-//    lateinit var etPassword: EditText
-//    lateinit var btnRegister: Button
 
     constructor(parcel: Parcel) : this() {
 
@@ -53,12 +36,14 @@ class Register() : AppCompatActivity(), Parcelable {
         setContentView(R.layout.activity_register)
         etUsername = findViewById(R.id.etRUserName)
         etPassword = findViewById(R.id.etRPassword)
-        //btnRegister = findViewById(R.id.btnRegister)
         var etButton = findViewById<Button>(R.id.btnRegister)
+
+        //Navigation code to register page
+        this.findViewById<TextView>(R.id.tvLoginLink).setOnClickListener{
+            startActivity(Intent(this, Login::class.java))
+        }
         etButton.setOnClickListener{
             registerUser()
-            //val Name = etUsername.getText().toString();
-            //Toast.makeText(this, Name+"Successfully Registered!", Toast.LENGTH_SHORT).show()
         }
     }
 
