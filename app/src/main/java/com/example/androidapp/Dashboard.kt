@@ -8,8 +8,6 @@ lateinit var welcomeText: String
 lateinit var tvWelcome: TextView
 class Dashboard : AppCompatActivity() {
 
-//    lateinit var welcomeText: String
-//    lateinit var tvWelcome: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard2)
